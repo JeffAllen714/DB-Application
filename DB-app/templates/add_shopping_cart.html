@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<style>
+    /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: #b39ddb;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #b39ddb;
+}
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #333;
+}
+
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+<body>
+    <header>
+        <h1>Add Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('get_products') }}">Products</a></li>
+                <li><a href="{{ url_for('get_customers') }}">Customers</a></li>
+                <li><a href="{{ url_for('get_orders') }}">Orders</a></li>
+                <li><a href="{{ url_for('get_shopping_carts') }}">Shopping Cart</a></li>
+                <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Add Shopping Cart</h2>
+        <form method="POST" action="{{ url_for('add_shopping_cart') }}">
+            <label for="customer_id">Customer ID:</label>
+            <input type="number" id="customer_id" name="customer_id" required><br>
+
+            <label for="order_id">Order ID:</label>
+            <input type="number" id="order_id" name="order_id" required><br>
+
+            <label for="product_id">Product ID:</label>
+            <input type="number" id="product_id" name="product_id" required><br>
+
+            <label for="cart_group_id">Cart Group ID:</label>
+            <input type="number" id="cart_group_id" name="cart_group_id" required><br>
+
+            <input type="submit" value="Add Shopping Cart">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Shopping. Lipscomb University.</p>
+    </footer>
+</body>
+</html>

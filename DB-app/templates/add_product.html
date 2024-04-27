@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<style>
+    /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: #b39ddb;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #b39ddb;
+}
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #333;
+}
+
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+<body>
+    <header>
+        <h1>Add Product</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('get_products') }}">Products</a></li>
+                <li><a href="{{ url_for('get_customers') }}">Customers</a></li>
+                <li><a href="{{ url_for('get_orders') }}">Orders</a></li>
+                <li><a href="{{ url_for('get_shopping_carts') }}">Shopping Cart</a></li>
+                <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Add Product</h2>
+        <form method="POST" action="{{ url_for('add_product') }}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea><br>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required><br>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category"><br>
+
+            <label for="stock_quantity">Stock Quantity:</label>
+            <input type="number" id="stock_quantity" name="stock_quantity"><br>
+
+            <input type="submit" value="Add Product">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Shopping. Lipscomb University.</p>
+    </footer>
+</body>
+</html>
