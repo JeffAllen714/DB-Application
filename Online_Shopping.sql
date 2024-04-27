@@ -100,7 +100,6 @@ CREATE TABLE CartGroup (
     FOREIGN KEY (CartGroupID) REFERENCES ShoppingCart(CartGroupID)
 );
 
--- REFERENTIAL ACTIONS --
 -- Referential Actions for Orders Table
 ALTER TABLE Orders
 ADD CONSTRAINT fk_orders_customer
@@ -124,12 +123,6 @@ ADD CONSTRAINT fk_customer_payment
 FOREIGN KEY (PaymentID) REFERENCES PaymentDetails(PaymentID)
 ON DELETE SET NULL;
 
--- TODO: Add a foreign key reference from Review to either Orders or OrderDetails
--- TODO: Maintain a relationship between CartGroup and ShoppingCart...
--- ... lets brainstorm what kind of fk's we want here ^
--- TODO: Make a Default Constraint, default status of an order to "Default"
--- TODO: Make a Check Constraint, to ensure that the price cant be negative
+-- SHOW TABLES;
 
-SHOW TABLES;
-
-SELECT * FROM PaymentDetails
+-- SELECT * FROM PaymentDetails
